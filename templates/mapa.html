@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_de30eebeb4d72bd188c8de23ff2b9049 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_de30eebeb4d72bd188c8de23ff2b9049" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_de30eebeb4d72bd188c8de23ff2b9049 = L.map(
+                "map_de30eebeb4d72bd188c8de23ff2b9049",
+                {
+                    center: [19.9516432, -99.5366745],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8c477e223c7e806af4707944085dde5d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_8c477e223c7e806af4707944085dde5d.addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            var marker_9cd7599cdbe750a554a495856b4869d7 = L.marker(
+                [19.9516432, -99.5366745],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_9cd7599cdbe750a554a495856b4869d7.bindTooltip(
+                `<div>
+                     Head <b>north</b> on <b>Sebastián Lerdo de Tejada</b> toward <b>Benito Juárez</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_542c9226b3a7051e2da21f3e39def90f = L.marker(
+                [19.9518968, -99.5367007],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_542c9226b3a7051e2da21f3e39def90f.bindTooltip(
+                `<div>
+                     Head <b>north</b> on <b>Sebastián Lerdo de Tejada</b> toward <b>Benito Juárez</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_a296ac9d334c217a772c5c2d991ac6b1 = L.polyline(
+                [[19.9516432, -99.5366745], [19.9518968, -99.5367007]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            var marker_ced49a24c5914e4a78c3781bd5ef2722 = L.marker(
+                [19.9518968, -99.5367007],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_ced49a24c5914e4a78c3781bd5ef2722.bindTooltip(
+                `<div>
+                     Turn <b>left</b> onto <b>Benito Juárez</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bd8769f311b659b9eb7877c03a6483e7 = L.marker(
+                [19.9518103, -99.5373702],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_bd8769f311b659b9eb7877c03a6483e7.bindTooltip(
+                `<div>
+                     Turn <b>left</b> onto <b>Benito Juárez</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_240cb1d433b8e88b8ebd691e69b69248 = L.polyline(
+                [[19.9518968, -99.5367007], [19.9518103, -99.5373702]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            var marker_385d0eb61ef621dc61553018ecc0599d = L.marker(
+                [19.9518103, -99.5373702],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_385d0eb61ef621dc61553018ecc0599d.bindTooltip(
+                `<div>
+                     Turn <b>right</b> at the 1st cross street onto <b>Revolución Sur</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_55798c929d3bdbcbbca3c7aa6d0d96d8 = L.marker(
+                [19.9533021, -99.5374597],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_55798c929d3bdbcbbca3c7aa6d0d96d8.bindTooltip(
+                `<div>
+                     Turn <b>right</b> at the 1st cross street onto <b>Revolución Sur</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_1310c611111e569b3548071e4cfceb07 = L.polyline(
+                [[19.9518103, -99.5373702], [19.9533021, -99.5374597]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            var marker_cf94cd0476193c56ad2597850d6f7fcf = L.marker(
+                [19.9533021, -99.5374597],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_cf94cd0476193c56ad2597850d6f7fcf.bindTooltip(
+                `<div>
+                     Turn <b>right</b> onto <b>Vicente Guerrero Pte.</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6b6a4b16fb58beda91f88c1071ba5151 = L.marker(
+                [19.9534678, -99.5346946],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_6b6a4b16fb58beda91f88c1071ba5151.bindTooltip(
+                `<div>
+                     Turn <b>right</b> onto <b>Vicente Guerrero Pte.</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_ac82a0447a6a77fa4908b7cf0ec0a1da = L.polyline(
+                [[19.9533021, -99.5374597], [19.9534678, -99.5346946]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            var marker_b229a229a7d8c15010d22fbc24a21eb2 = L.marker(
+                [19.9534678, -99.5346946],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_b229a229a7d8c15010d22fbc24a21eb2.bindTooltip(
+                `<div>
+                     Turn <b>left</b> onto <b>Lázaro Cárdenas Sur</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d6556848fb25214de19c5f9723d2ee05 = L.marker(
+                [19.9547867, -99.5348806],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_d6556848fb25214de19c5f9723d2ee05.bindTooltip(
+                `<div>
+                     Turn <b>left</b> onto <b>Lázaro Cárdenas Sur</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_c4dea377ba449ac9396d37b3a4495f35 = L.polyline(
+                [[19.9534678, -99.5346946], [19.9547867, -99.5348806]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            var marker_5f6ecb991fb5e48982372065c51b491a = L.marker(
+                [19.9547867, -99.5348806],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_5f6ecb991fb5e48982372065c51b491a.bindTooltip(
+                `<div>
+                     Continue onto <b>Av. Lázaro Cárdenas Nte.</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_736d87a6984b18e3ea7a14e22d69d5e2 = L.marker(
+                [19.9578612, -99.53523550000001],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_736d87a6984b18e3ea7a14e22d69d5e2.bindTooltip(
+                `<div>
+                     Continue onto <b>Av. Lázaro Cárdenas Nte.</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_2a9f477f6a937d2a1c4af111dc71d0b6 = L.polyline(
+                [[19.9547867, -99.5348806], [19.9578612, -99.53523550000001]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            var marker_d58f41b641ddeba479904a0ac871d2ff = L.marker(
+                [19.9578612, -99.53523550000001],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_d58f41b641ddeba479904a0ac871d2ff.bindTooltip(
+                `<div>
+                     Turn <b>right</b> onto <b>Constituyentes</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8be30a2bfe87115c3fbe58af0026b406 = L.marker(
+                [19.9583535, -99.5327367],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_8be30a2bfe87115c3fbe58af0026b406.bindTooltip(
+                `<div>
+                     Turn <b>right</b> onto <b>Constituyentes</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_b02c9f173df138edae2248006f3e4132 = L.polyline(
+                [[19.9578612, -99.53523550000001], [19.9583535, -99.5327367]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            var marker_877c242367755ce63fac8f21f98853a6 = L.marker(
+                [19.9583535, -99.5327367],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_877c242367755ce63fac8f21f98853a6.bindTooltip(
+                `<div>
+                     Turn <b>left</b> onto <b>Andrés Molina Enríquez</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a649075f18703a305a6ddc70fc349a10 = L.marker(
+                [19.9682927, -99.53151559999999],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_a649075f18703a305a6ddc70fc349a10.bindTooltip(
+                `<div>
+                     Turn <b>left</b> onto <b>Andrés Molina Enríquez</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_73b7f98c9e794de7bb1239642e314a88 = L.polyline(
+                [[19.9583535, -99.5327367], [19.9682927, -99.53151559999999]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            var marker_48270b7702171d1ac89e176da9497451 = L.marker(
+                [19.9682927, -99.53151559999999],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_48270b7702171d1ac89e176da9497451.bindTooltip(
+                `<div>
+                     At the roundabout, take the <b>1st</b> exit onto <b>Jilotepec - San Agustín</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_99c5dab349ec9f97a8f05ecca14b4fdc = L.marker(
+                [19.9758474, -99.5304781],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_99c5dab349ec9f97a8f05ecca14b4fdc.bindTooltip(
+                `<div>
+                     At the roundabout, take the <b>1st</b> exit onto <b>Jilotepec - San Agustín</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_5ebc57050a2e9babf7c1913c676c8e29 = L.polyline(
+                [[19.9682927, -99.53151559999999], [19.9758474, -99.5304781]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            var marker_3a48f7137e5cef43940fe4ee4a258a38 = L.marker(
+                [19.9758474, -99.5304781],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_3a48f7137e5cef43940fe4ee4a258a38.bindTooltip(
+                `<div>
+                     At the roundabout, take the <b>3rd</b> exit onto the <b>Arco Nte.</b> ramp to <b>México 57D</b>/<wbr/><b>Aut. Mexico-Queretaro</b><div style="font-size:0.9em">Toll road</div>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fb1b9bb2ebe6669ee441fbd056a1fae8 = L.marker(
+                [19.9767286, -99.53171499999999],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_fb1b9bb2ebe6669ee441fbd056a1fae8.bindTooltip(
+                `<div>
+                     At the roundabout, take the <b>3rd</b> exit onto the <b>Arco Nte.</b> ramp to <b>México 57D</b>/<wbr/><b>Aut. Mexico-Queretaro</b><div style="font-size:0.9em">Toll road</div>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_420d68213ee45b5ecf1a603ffadb58ad = L.polyline(
+                [[19.9758474, -99.5304781], [19.9767286, -99.53171499999999]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            var marker_4e81db22dd1b1bd9d847b8df7288c56f = L.marker(
+                [19.9767286, -99.53171499999999],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_4e81db22dd1b1bd9d847b8df7288c56f.bindTooltip(
+                `<div>
+                     Slight <b>right</b> onto the ramp to <b>Puebla</b>/<wbr/><b>México 57D</b><div style="font-size:0.9em">Toll road</div>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f24f7a7a9857744bb2677ad2084a7989 = L.marker(
+                [19.9784822, -99.5271435],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_f24f7a7a9857744bb2677ad2084a7989.bindTooltip(
+                `<div>
+                     Slight <b>right</b> onto the ramp to <b>Puebla</b>/<wbr/><b>México 57D</b><div style="font-size:0.9em">Toll road</div>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_2f74c4812b07aadd0852051ab7ee808a = L.polyline(
+                [[19.9767286, -99.53171499999999], [19.9784822, -99.5271435]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            var marker_13bc2e3a113c88a93b32e291c15be953 = L.marker(
+                [19.9784822, -99.5271435],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_13bc2e3a113c88a93b32e291c15be953.bindTooltip(
+                `<div>
+                     Merge onto <b>Arco Nte.</b><div style="font-size:0.9em">Toll road</div>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0ed46539f2709c4a8ab6cee5236b88fb = L.marker(
+                [19.297001, -98.41023539999999],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_0ed46539f2709c4a8ab6cee5236b88fb.bindTooltip(
+                `<div>
+                     Merge onto <b>Arco Nte.</b><div style="font-size:0.9em">Toll road</div>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_839d48c8e73938b562ff84336ed1cd43 = L.polyline(
+                [[19.9784822, -99.5271435], [19.297001, -98.41023539999999]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            var marker_6a8f6b01df19c70387465c11b6bc0200 = L.marker(
+                [19.297001, -98.41023539999999],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_6a8f6b01df19c70387465c11b6bc0200.bindTooltip(
+                `<div>
+                     Continue onto <b>Arco Nte.</b>/<wbr/><b>México 57D</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3e77360e22c4d8f45914c86a73175f91 = L.marker(
+                [19.2956099, -98.4103835],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_3e77360e22c4d8f45914c86a73175f91.bindTooltip(
+                `<div>
+                     Continue onto <b>Arco Nte.</b>/<wbr/><b>México 57D</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_4247928730bb092e8acb9d959af64e72 = L.polyline(
+                [[19.297001, -98.41023539999999], [19.2956099, -98.4103835]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            var marker_7045ece170c8be987e3f1d57fceb7fdc = L.marker(
+                [19.2956099, -98.4103835],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_7045ece170c8be987e3f1d57fceb7fdc.bindTooltip(
+                `<div>
+                     Take the exit toward <b>Tlaxcala</b>/<wbr/><b>México 117</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_018f69a456ebbc5e827cc2423d535c3b = L.marker(
+                [19.2961665, -98.4111398],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_018f69a456ebbc5e827cc2423d535c3b.bindTooltip(
+                `<div>
+                     Take the exit toward <b>Tlaxcala</b>/<wbr/><b>México 117</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_42f3fb559744561ae7936c08d5273024 = L.polyline(
+                [[19.2956099, -98.4103835], [19.2961665, -98.4111398]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            var marker_83333a549a4eb8844cf5cd7322c9bea7 = L.marker(
+                [19.2961665, -98.4111398],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_83333a549a4eb8844cf5cd7322c9bea7.bindTooltip(
+                `<div>
+                     Merge onto <b>San Martin Texmelucan - Tlaxcala</b>/<wbr/><b>México 117D</b><div style="font-size:0.9em">Toll road</div>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e61d1d187ef492587892c2ae3171b173 = L.marker(
+                [19.326282, -98.2483968],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_e61d1d187ef492587892c2ae3171b173.bindTooltip(
+                `<div>
+                     Merge onto <b>San Martin Texmelucan - Tlaxcala</b>/<wbr/><b>México 117D</b><div style="font-size:0.9em">Toll road</div>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_bf32f5eb73ce525120d6ca6718a40b69 = L.polyline(
+                [[19.2961665, -98.4111398], [19.326282, -98.2483968]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            var marker_97af048e27be114c88c2994bc55f3673 = L.marker(
+                [19.326282, -98.2483968],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_97af048e27be114c88c2994bc55f3673.bindTooltip(
+                `<div>
+                     Take the <b>Puebla</b> ramp to <b>Tlaxcala</b>/<wbr/><b>Mexico 119</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8d907deb281fdf76f4288e5b434198c7 = L.marker(
+                [19.3254122, -98.2477272],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_8d907deb281fdf76f4288e5b434198c7.bindTooltip(
+                `<div>
+                     Take the <b>Puebla</b> ramp to <b>Tlaxcala</b>/<wbr/><b>Mexico 119</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_0388e1f2d6189be778ac0106dc8dda31 = L.polyline(
+                [[19.326282, -98.2483968], [19.3254122, -98.2477272]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            var marker_ed358810f8b8e6ecb0ceebce23608500 = L.marker(
+                [19.3254122, -98.2477272],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_ed358810f8b8e6ecb0ceebce23608500.bindTooltip(
+                `<div>
+                     At the roundabout, take the <b>2nd</b> exit onto <b>Puebla</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6dd18e032c3a7e041f97625ccf66864a = L.marker(
+                [19.3175246, -98.2449608],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_6dd18e032c3a7e041f97625ccf66864a.bindTooltip(
+                `<div>
+                     At the roundabout, take the <b>2nd</b> exit onto <b>Puebla</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_727696b6a1c9f8c18189ee3b1b6a9a6f = L.polyline(
+                [[19.3254122, -98.2477272], [19.3175246, -98.2449608]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            var marker_4d8316a6b118f7c35df505ba65f920f3 = L.marker(
+                [19.3175246, -98.2449608],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_4d8316a6b118f7c35df505ba65f920f3.bindTooltip(
+                `<div>
+                     Slight <b>left</b> onto <b>Av. Vicente Guerrero</b><div style="font-size:0.9em">Pass by Lavysec Plus Tintorería (on the left)</div>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cdc6620c80dc6484a826bd4b28bd115d = L.marker(
+                [19.3141381, -98.23922209999999],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_cdc6620c80dc6484a826bd4b28bd115d.bindTooltip(
+                `<div>
+                     Slight <b>left</b> onto <b>Av. Vicente Guerrero</b><div style="font-size:0.9em">Pass by Lavysec Plus Tintorería (on the left)</div>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_1c3abe069c442e12b3135a35423b93e4 = L.polyline(
+                [[19.3175246, -98.2449608], [19.3141381, -98.23922209999999]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            var marker_e37ac31f3644918747ec54773a0c81ba = L.marker(
+                [19.3141381, -98.23922209999999],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_e37ac31f3644918747ec54773a0c81ba.bindTooltip(
+                `<div>
+                     Turn <b>left</b> onto <b>Av Independencia</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_694c58cc5953b43ca3aacd7afe971897 = L.marker(
+                [19.3160831, -98.23804539999999],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_694c58cc5953b43ca3aacd7afe971897.bindTooltip(
+                `<div>
+                     Turn <b>left</b> onto <b>Av Independencia</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_3807c32a04768ff1613eca1339e558d1 = L.polyline(
+                [[19.3141381, -98.23922209999999], [19.3160831, -98.23804539999999]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            var marker_16856647f30bad6c5ef034387e53c889 = L.marker(
+                [19.3160831, -98.23804539999999],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_16856647f30bad6c5ef034387e53c889.bindTooltip(
+                `<div>
+                     Continue onto <b>Plaza de la Constitución</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ce77685016ef10b616d8fd52b48e2c86 = L.marker(
+                [19.3171681, -98.23733999999999],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_ce77685016ef10b616d8fd52b48e2c86.bindTooltip(
+                `<div>
+                     Continue onto <b>Plaza de la Constitución</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_b0e596242377decceb9ec4d3c1809003 = L.polyline(
+                [[19.3160831, -98.23804539999999], [19.3171681, -98.23733999999999]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            var marker_9e9db7dae1bbb17e75c681e2db137366 = L.marker(
+                [19.3171681, -98.23733999999999],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_9e9db7dae1bbb17e75c681e2db137366.bindTooltip(
+                `<div>
+                     Continue onto <b>Av. Juárez</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d707f271d176e3a56dc2cb7993de0ea1 = L.marker(
+                [19.317561, -98.23708839999999],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_d707f271d176e3a56dc2cb7993de0ea1.bindTooltip(
+                `<div>
+                     Continue onto <b>Av. Juárez</b>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_5e3432639db35009febaae2456fb5d63 = L.polyline(
+                [[19.3171681, -98.23733999999999], [19.317561, -98.23708839999999]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            var marker_d053ca8ef14e9490b9e78873e357c2cf = L.marker(
+                [19.317561, -98.23708839999999],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_d053ca8ef14e9490b9e78873e357c2cf.bindTooltip(
+                `<div>
+                     Turn <b>left</b> onto <b>Av. Miguel de Lardizábal y Uribe</b><div style="font-size:0.9em">Destination will be on the right</div>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_638b406a875d42417a0e5cb5f4ba5bf3 = L.marker(
+                [19.3179005, -98.23766239999999],
+                {}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+    
+            marker_638b406a875d42417a0e5cb5f4ba5bf3.bindTooltip(
+                `<div>
+                     Turn <b>left</b> onto <b>Av. Miguel de Lardizábal y Uribe</b><div style="font-size:0.9em">Destination will be on the right</div>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_4b17f2004467e91e732160219a1f4547 = L.polyline(
+                [[19.317561, -98.23708839999999], [19.3179005, -98.23766239999999]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_de30eebeb4d72bd188c8de23ff2b9049);
+        
+</script>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado de la Ruta</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .btn-danger {
+            border-radius: 50px;
+            padding: 10px 30px;
+            font-size: 16px;
+        }
+        .btn-primary {
+            border-radius: 50px;
+            padding: 10px 30px;
+            font-size: 16px;
+        }
+        h1, h2 {
+            font-weight: 300;
+        }
+        #map {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+    <script>
+        let map, directionsService, directionsRenderer, trafficLayer, watchId, currentMarker;
+
+        function initMap() {
+            directionsService = new google.maps.DirectionsService();
+            directionsRenderer = new google.maps.DirectionsRenderer();
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 7,
+                center: { lat: 19.432608, lng: -99.133209 }
+            });
+
+            // Agregar capa de tráfico
+            trafficLayer = new google.maps.TrafficLayer();
+            trafficLayer.setMap(map);
+
+            directionsRenderer.setMap(map);
+
+            const ruta = {{ ruta_gmaps | tojson }};
+            const waypoints = {{ waypoints | tojson }};
+
+            const processedWaypoints = waypoints.map(location => ({
+                location: location,
+                stopover: true
+            }));
+
+            const waypointsMarkers = waypoints.map((location, index) => {
+                new google.maps.Marker({
+                    position: location,
+                    label: `${index + 1}`,
+                    map: map
+                });
+            });
+
+            directionsService.route({
+                origin: { lat: ruta[0].legs[0].start_location.lat, lng: ruta[0].legs[0].start_location.lng },
+                destination: { lat: ruta[0].legs[ruta[0].legs.length - 1].end_location.lat, lng: ruta[0].legs[ruta[0].legs.length - 1].end_location.lng },
+                waypoints: processedWaypoints,
+                travelMode: 'DRIVING'
+            }, (response, status) => {
+                if (status === 'OK') {
+                    directionsRenderer.setDirections(response);
+                } else {
+                    window.alert('Directions request failed due to ' + status);
+                }
+            });
+        }
+
+        function startNavigation() {
+            if (navigator.geolocation) {
+                watchId = navigator.geolocation.watchPosition(updatePosition, showError, { enableHighAccuracy: true });
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function updatePosition(position) {
+            const currentLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            if (currentMarker) {
+                currentMarker.setPosition(currentLocation);
+            } else {
+                currentMarker = new google.maps.Marker({
+                    position: currentLocation,
+                    map: map,
+                    icon: {
+                        url: "http://maps.google.com/mapfiles/kml/shapes/cabs.png",
+                        scaledSize: new google.maps.Size(50, 50)
+                    }
+                });
+            }
+            map.setCenter(currentLocation);
+        }
+
+        function showError(error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    alert("User denied the request for Geolocation.");
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    alert("Location information is unavailable.");
+                    break;
+                case error.TIMEOUT:
+                    alert("The request to get user location timed out.");
+                    break;
+                case error.UNKNOWN_ERROR:
+                    alert("An unknown error occurred.");
+                    break;
+            }
+        }
+
+        function stopNavigation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.clearWatch(watchId);
+                if (currentMarker) {
+                    currentMarker.setMap(null);
+                    currentMarker = null;
+                }
+            }
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCp-9uuzH1C7BVWpq09YDfrd89K_cGjL1Q&callback=initMap"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="text-center">
+            <h1>Resultado de la Ruta</h1>
+            <p class="lead">Aquí están los detalles de tu ruta</p>
+        </div>
+        <div class="card p-4">
+            <div class="card-body">
+                <h2>Detalles de la ruta:</h2>
+                <p>Distancia total (Google Maps): <strong>{{ distancia_total_gmaps }} km</strong></p>
+                <p>Consumo de combustible estimado (Google Maps): <strong>{{ consumo_combustible_gmaps }} litros</strong></p>
+                <p>Duración estimada del viaje: <strong>{{ duracion_total }}</strong></p>
+                <p>Hora estimada de llegada: <strong>{{ llegada_estimada }}</strong></p>
+                {% if algoritmo != 'ninguno' %}
+                <p>Ruta óptima: <strong>{{ ruta_optima }}</strong></p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="mt-3">
+            <h2>Mapa de la Ruta (Google Maps):</h2>
+            <div id="map" style="height: 600px; width: 100%;"></div>
+        </div>
+        <div class="mt-3 text-center">
+            <button class="btn btn-primary" onclick="startNavigation()">Empezar Ruta</button>
+            <button class="btn btn-danger" onclick="stopNavigation()">Detener Ruta</button>
+        </div>
+        <div class="mt-3 text-center">
+            <a href="/" class="btn btn-danger">Volver</a>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

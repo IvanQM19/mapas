@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Rutas</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 30px;
+            font-size: 16px;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        h1 {
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-center">
+            <h1>CALCULADORA DE RUTAS</h1>
+            <p class="lead">Ingrese los detalles para calcular la ruta óptima</p>
+        </div>
+        <div class="card p-4">
+            <form action="/ruta" method="post">
+                <div class="form-group">
+                    <label for="origen">Origen:</label>
+                    <input type="text" class="form-control" id="origen" name="origen" placeholder="Ingrese el punto de origen" required>
+                </div>
+                <div class="form-group">
+                    <label for="destino">Destino:</label>
+                    <input type="text" class="form-control" id="destino" name="destino" placeholder="Ingrese el punto de destino" required>
+                </div>
+                <div class="form-group">
+                    <label for="paradas">Paradas (separadas por comas):</label>
+                    <input type="text" class="form-control" id="paradas" name="paradas" placeholder="Ingrese las paradas intermedias">
+                </div>
+                <div class="form-group">
+                    <label for="eficiencia">Eficiencia de combustible (km/l):</label>
+                    <input type="number" class="form-control" id="eficiencia" name="eficiencia" placeholder="Ingrese la eficiencia de combustible" required>
+                </div>
+                <div class="form-group">
+                    <label for="algoritmo">Algoritmo de optimización:</label>
+                    <select class="form-control" id="algoritmo" name="algoritmo">
+                        <option value="ninguno">Ninguno (Google Maps por defecto)</option>
+                        <option value="dijkstra">Dijkstra</option>
+                        <option value="tsp">TSP</option>
+                    </select>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Calcular ruta</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
